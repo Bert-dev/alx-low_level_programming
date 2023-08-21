@@ -1,10 +1,10 @@
-#ifndef main.h
-#define main.h
+#ifndef MAIN_H
+#define MAIN_H
 
 /**
- * File: main.h
- * Desc: Header file containing prototypes for all functions
- *  Return: Always 0
+ * Desc: Header file containing
+ * prototypes for all functions
+ *
  */
 
 #include <stdlib.h>
