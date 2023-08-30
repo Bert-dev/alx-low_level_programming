@@ -1,19 +1,55 @@
 #include "main.h"
 /**
- * wildcmp -  compare 2 string and search if s2 is a valid wildcard string
- * @s1: string.
- * @s2: string with wildcard.
- * Return: 1 if the strings can be considered identical, otherwise return 0.
+ * s_len - calculates the length of a string.
+ * @s: original string
+ *
+ *
+ * Return: length of string.
  */
-int wildcmp(char *s1, char *s2)
+int s_len(char *s)
 {
-	if (*s1 == '\0' && *s2 == '*' && *(s2 + 1) != '\0')
+	if (*s == '\0')
+	{
 		return (0);
-	if (*s1 == '\0' && *s2 == '\0')
+	}
+	else
+	{
+		return (1 + s_len(s + 1));
+	}
+}
+/**
+ * pal - check if a string is a palindrome.
+ * @s: original string
+ * @i: initial point of recursion
+ * @len: length of string
+ * Return: 1 if is palindrome otherwise 0.
+ */
+int pal(char *s, int i, int len)
+{
+	if (*(s + i) == *(s + len - 1 - i) && i == (len / 2))
+	{
 		return (1);
-	if (*s1 == *s2)
-		return (wildcmp(s1 + 1, s2 + 1));
-	if (*s2 == '*')
-		return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
-	return (0);
+	}
+	else if (*(s + i) != *(s + len - 1 - i))
+	{
+		return (0);
+	}
+	else
+	{
+		return (pal(s, i + 1, len));
+	}
+}
+/**
+ * is_palindrome - check if the string is a palindrome ex ala.
+ * @s: original string
+ *
+ *
+ * Return: 1 if is alindrome otherwise 0.
+ */
+int is_palindrome(char *s)
+{
+	if (pal(s, 0, s_len(s)) == 1)
+		return (1);
+	else
+		return (0);
 }
