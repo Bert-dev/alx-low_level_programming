@@ -21,7 +21,7 @@ lName++;
 for (lOwner = 0; *(owner + lOwner); lOwner++)
 ;
 lOwner++;
-newDog->name = malloc(lName * sizeof(char));
+newDog->name = malloc(lName *sizeof(char));
 if (newDog->name == NULL)
 {
 free(newDog);
@@ -30,7 +30,7 @@ return (NULL);
 for (i = 0; i < lName; i++)
 *(newDog->name + i) = *(name + i);
 newDog->age = age;
-newDog->owner = malloc(lOwner * sizeof(char));
+newDog->owner = malloc(lOwner *sizeof(char));
 if (newDog->owner == NULL)
 {
 free(newDog->name);
