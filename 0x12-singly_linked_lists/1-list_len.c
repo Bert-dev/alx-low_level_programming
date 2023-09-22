@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * listint_len - shows the number of node of a listint_t list.
+ * list_len - shows the number of node of a listint_t list.
  * @h: pointer to the header address
  * Return: number of nodes
  */
