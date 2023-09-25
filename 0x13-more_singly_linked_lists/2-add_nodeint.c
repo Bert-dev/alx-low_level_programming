@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *add_nodeint- adds a  new element
- * @new_node:new node to be added
- * @head: elements
- * @n: number of nodes
- *return 0;
+ * add_nodeint - adds a node at the begining of a list.
+ * @head: current head address
+ * @n: number to fill the node
+ * Return: the adress of new_node
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
