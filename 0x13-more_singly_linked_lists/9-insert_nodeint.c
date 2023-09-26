@@ -1,4 +1,5 @@
 #include "lists.h"
+#include<stdlib.h>
 /**
  * insert_nodeint_at_index -  insert a node in a idx position
  * @head: pointer to head in function
@@ -12,17 +13,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *node_index = *head;
 	listint_t *new_node, *node_after;
 
-	if (head == NULL || *head == NULL)/*Ask if there is not input*/
+	if (head == NULL || *head == NULL)
 		return (NULL);
 
-	for (nodes = 0; node_index != NULL; nodes++)/*Count the num of nodes*/
+	for (nodes = 0; node_index != NULL; nodes++)
 		node_index = node_index->next;
-	if (idx > (nodes + 1))/*Allows insert until after-last node*/
+	if (idx > (nodes + 1))
 		return (NULL);
 
 	node_index = *head;
 
-	new_node = malloc(sizeof(listint_t));/*allocate and fill the new node*/
+	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->n = n;
