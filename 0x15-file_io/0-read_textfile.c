@@ -8,7 +8,6 @@
  *@filename: file to print from
  *return: the actual number of letters it could read and print, or 0 if it fail
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 char *print_field;
@@ -18,12 +17,12 @@ return (0);
 print_field = malloc(letters * sizeof(char));
 if (print_field == NULL)
 return (0);
-file = popen(filename, O_RDONLY);
+file = open(filename, O_RDONLY);
 if (file == -1)
 return (0);
-fread_file = read(file, print_field, letters);
-fwrite(STDOUT_FILENO, print_field,read_file);
-pclose(file);
+read_file = read(file, print_field, letters);
+write(STDOUT_FILENO, print_field, read_file);
+close(file);
 free(print_field);
 return (read_file);
 }
