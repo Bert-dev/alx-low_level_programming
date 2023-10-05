@@ -1,5 +1,7 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
+
 /**
  * main- copy 1 file to another
  * @argc: argument counter
