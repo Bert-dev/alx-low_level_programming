@@ -4,8 +4,8 @@
 
 /**
  * main - check the code
- * @av:pointer to char
- * @ac: parameter accepted
+ *@ac: parameter accepted
+ *@av - pointer to c
  * Return: Always 0.
  */
 int main(int ac, char **av)
@@ -16,7 +16,7 @@ if (ac != 3)
 dprintf(2, "Usage: %s filename text\n", av[0]);
 exit(1);
 }
-res = create_file(av[1], av[2]);
+res = append_text_to_file(av[1], av[2]);
 printf("-> %i)\n", res);
 return (0);
 }
